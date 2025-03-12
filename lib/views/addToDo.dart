@@ -20,16 +20,20 @@ class AddToDoView extends StatelessWidget {
       home: Scaffold(
           appBar: AppBar(
             title: const Text(
-              'Add ToDo.',
+              'เพิ่มสิ่งที่ต้องทำ | Add ToDo',
               style: TextStyle(color: Colors.white),
             ),
             backgroundColor: Colors.black,
           ),
           body: Center(
-              child: Column(
-            children: [
+              child: Padding(padding: EdgeInsets.all(10), child: Column(children: [
+              Text("หัวข้อ:"),
               TextField(controller: titleController),
-              TextField(controller: subtitleController),
+              Padding(padding: EdgeInsets.all(10), child: 
+              Column(children: [
+                Text("เนื้อหา:"),
+                TextField(controller: subtitleController),
+              ])),
               Padding(padding: EdgeInsets.all(10), child: ElevatedButton(
                 onPressed: () {
                   if (titleController.text.isEmpty) return;
@@ -39,10 +43,10 @@ class AddToDoView extends StatelessWidget {
                   );
                   Get.back();
                 },
-                child: Text("Add todo"),
+                child: Text("เพิ่มสิ่งที่ต้องทำ"),
               ))
             ],
-          ))),
+          )))),
     );
   }
 }
